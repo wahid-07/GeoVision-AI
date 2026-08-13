@@ -8,9 +8,9 @@ from typing import Dict, List
 
 from flask import Flask, jsonify, render_template_string, request, send_file
 
-from stages.stage1_single_cell.annotation.annotate_heatmap_cells import has_complete_artifacts, process_image
-from stages.stage2_multiclass.taxonomy.class_taxonomy import CANONICAL_CLASS_NAMES, canonicalize_label
-from stages.stage1_single_cell.core.landcover_pipeline import get_device, load_model
+from stages.cell_inference.annotation.generate_heatmap_annotations import has_complete_artifacts, process_image
+from stages.landcover_model.taxonomy.landcover_class_taxonomy import CANONICAL_CLASS_NAMES, canonicalize_label
+from stages.cell_inference.core.landcover_inference_pipeline import get_device, load_model
 
 
 def extract_cell_patch(image_path: str, cell_box: List[int]) -> object:

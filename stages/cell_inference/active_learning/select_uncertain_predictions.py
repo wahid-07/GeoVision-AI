@@ -18,7 +18,7 @@ from typing import Dict, List
 
 import torch
 
-from stages.stage1_single_cell.core.landcover_pipeline import get_device, load_model, predict_single_image
+from stages.cell_inference.core.landcover_inference_pipeline import get_device, load_model, predict_single_image
 
 
 def collect_image_paths(input_dir: str, extensions: set = {'.jpg', '.jpeg', '.png', '.tif', '.tiff'}) -> List[str]:

@@ -8,7 +8,7 @@ import os
 import pandas as pd
 from pathlib import Path
 
-from stages.stage2_multiclass.taxonomy.class_taxonomy import CANONICAL_CLASS_NAMES, CLASS_ALIASES
+from stages.landcover_model.taxonomy.landcover_class_taxonomy import CANONICAL_CLASS_NAMES, CLASS_ALIASES
 
 # Configuration
 DATA_DIR = 'data/EuroSAT_RGB/EuroSAT_RGB'  # Root directory with class folders

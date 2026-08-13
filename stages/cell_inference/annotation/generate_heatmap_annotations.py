@@ -26,7 +26,7 @@ import numpy as np
 import torch
 from PIL import Image, ImageDraw, ImageFont
 
-from stages.stage1_single_cell.core.landcover_pipeline import (
+from stages.cell_inference.core.landcover_inference_pipeline import (
     CANONICAL_CLASS_COLORS,
     CANONICAL_CLASS_NAMES,
     get_device,

@@ -15,8 +15,8 @@ from datetime import datetime
 import numpy as np
 from pathlib import Path
 
-from stages.stage2_multiclass.taxonomy.class_taxonomy import CANONICAL_CLASS_NAMES, canonicalize_label
-from stages.stage1_single_cell.core.landcover_pipeline import canonicalize_probabilities
+from stages.landcover_model.taxonomy.landcover_class_taxonomy import CANONICAL_CLASS_NAMES, canonicalize_label
+from stages.cell_inference.core.landcover_inference_pipeline import canonicalize_probabilities
 
 CLASS_LABELS = {idx: name for idx, name in enumerate(CANONICAL_CLASS_NAMES)}
 MERGED_CLASS_NAMES = CANONICAL_CLASS_NAMES

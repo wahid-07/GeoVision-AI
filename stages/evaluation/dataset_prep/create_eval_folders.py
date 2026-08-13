@@ -6,7 +6,7 @@ Automatically creates organized folders for testing with 10 land cover classes
 import os
 import argparse
 
-from stages.stage2_multiclass.taxonomy.class_taxonomy import CANONICAL_CLASS_NAMES
+from stages.landcover_model.taxonomy.landcover_class_taxonomy import CANONICAL_CLASS_NAMES
 
 CLASSES = CANONICAL_CLASS_NAMES
 

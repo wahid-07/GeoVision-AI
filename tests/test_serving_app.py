@@ -2,7 +2,7 @@ import io
 
 import pytest
 
-from stages.stage2_multiclass.serving.app import app
+from stages.landcover_model.serving.flask_serving_app import app
 
 
 @pytest.fixture()

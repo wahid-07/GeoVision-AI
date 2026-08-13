@@ -13,7 +13,7 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 
-from stages.stage1_single_cell.core.landcover_pipeline import (
+from stages.cell_inference.core.landcover_inference_pipeline import (
     CANONICAL_CLASS_COLORS,
     CANONICAL_CLASS_NAMES,
     get_device,

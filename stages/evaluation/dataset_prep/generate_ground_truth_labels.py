@@ -8,7 +8,7 @@ import json
 import argparse
 from pathlib import Path
 
-from stages.stage2_multiclass.taxonomy.class_taxonomy import CANONICAL_CLASS_NAMES, CLASS_ALIASES, canonicalize_label
+from stages.landcover_model.taxonomy.landcover_class_taxonomy import CANONICAL_CLASS_NAMES, CLASS_ALIASES, canonicalize_label
 
 # Valid image extensions
 IMAGE_EXTENSIONS = {'.jpg', '.jpeg', '.png', '.tif', '.tiff', '.bmp'}

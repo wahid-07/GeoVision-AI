@@ -18,7 +18,7 @@ from typing import Dict, List
 
 from PIL import Image
 
-from stages.stage2_multiclass.taxonomy.class_taxonomy import CANONICAL_CLASS_NAMES, canonicalize_label
+from stages.landcover_model.taxonomy.landcover_class_taxonomy import CANONICAL_CLASS_NAMES, canonicalize_label
 
 
 def load_annotations(json_path: str) -> List[Dict]:

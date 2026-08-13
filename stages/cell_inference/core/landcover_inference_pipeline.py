@@ -27,7 +27,7 @@ from matplotlib import pyplot as plt
 from matplotlib.patches import Patch
 from torchvision import models, transforms
 
-from stages.stage2_multiclass.taxonomy.class_taxonomy import (
+from stages.landcover_model.taxonomy.landcover_class_taxonomy import (
     CANONICAL_CLASS_COLORS,
     CANONICAL_CLASS_NAMES,
     RAW_CLASS_LABELS,

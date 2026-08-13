@@ -13,7 +13,7 @@ import os
 from flask import Flask, jsonify, render_template_string, request
 from PIL import Image
 
-from stages.stage1_single_cell.core.landcover_pipeline import (
+from stages.cell_inference.core.landcover_inference_pipeline import (
     CANONICAL_CLASS_NAMES,
     get_device,
     load_model,

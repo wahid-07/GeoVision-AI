@@ -1,53 +1,47 @@
-# Stage-Based Python File Organization
+# GeoVision AI workflow structure
 
-This folder groups project Python files by workflow stage.
+This folder groups the project by functional workflow stage.
 
-## Stage 1: Initial Single-Cell Predictions
-Path: `stages/stage1_single_cell`
+## 1) Cell inference and annotation
+Path: `stages/cell_inference`
 
 ### `core/`
-- `inference.py` - Single image inference + optional heatmap generation
-- `landcover_pipeline.py` - Shared model inference and heatmap utilities
+- `single_image_inference.py` - single-image classification and optional heatmap generation
+- `landcover_inference_pipeline.py` - shared model loading, preprocessing, and inference utilities
 
 ### `annotation/`
-- `annotate_heatmap_cells.py` - Generate per-cell predictions and annotation JSON
-- `annotate_cells_interactive.py` - Interactive annotation support
-- `cell_annotation_web.py` - Web UI for cell correction
-- `extract_corrected_cells.py` - Extract corrected patches from annotation JSON
+- `generate_heatmap_annotations.py` - generate cell-level predictions and annotation JSON
+- `interactive_cell_annotation.py` - annotate or correct cells interactively
+- `cell_annotation_dashboard.py` - web UI for reviewing cell labels and corrections
+- `extract_corrected_cell_patches.py` - export corrected patches as training samples
 
 ### `active_learning/`
-- `identify_uncertain_predictions.py` - Select uncertain images/cells for labeling
+- `select_uncertain_predictions.py` - identify uncertain samples for manual review or retraining
 
-## Stage 2: Multi-Class Classification
-Path: `stages/stage2_multiclass`
+## 2) Land-cover model training and serving
+Path: `stages/landcover_model`
 
 ### `training/`
-- `create_eurosat_csv.py` - Build training CSV index from dataset
-- `train.py` - Initial training on EuroSAT
-- `finetune_indian.py` - Fine-tuning workflow for Indian data
+- `build_eurosat_csv.py` - build the training CSV from the dataset
+- `train_eurosat_model.py` - train the base land-cover model
+- `fine_tune_indian_model.py` - adapt the model to Indian imagery
 
 ### `taxonomy/`
-- `class_taxonomy.py` - Canonical class mapping and label normalization
+- `landcover_class_taxonomy.py` - canonical class names, alias mapping, and colors
 
 ### `serving/`
-- `app.py` - Flask API for model inference endpoints
+- `flask_serving_app.py` - Flask API and dashboard for live predictions
 
-## Stage 3: Accuracy and Evaluation Scripts
-Path: `stages/stage3_accuracy`
+## 3) Evaluation and reporting
+Path: `stages/evaluation`
 
 ### `dataset_prep/`
-- `create_test_folders.py` - Build test folder structure
-- `generate_ground_truth.py` - Generate ground truth metadata
+- `create_eval_folders.py` - create labeled evaluation folder structures
+- `generate_ground_truth_labels.py` - generate the ground-truth metadata
 
 ### `evaluation/`
-- `test_indian_data_folders.py` - Batch evaluation across labeled folders
-- `benchmark_heatmap_settings.py` - Benchmark heatmap hyperparameters
+- `evaluate_indian_folders.py` - evaluate performance on folder-based test sets
+- `benchmark_heatmap_parameters.py` - benchmark heatmap settings and thresholds
 
 ### `reports/`
-- `analyze_cell_annotations.py` - Annotation-driven accuracy/error analytics and plots
-
----
-
-## Note
-The stage folders are now the canonical source locations for these Python files.
-Legacy copies under `scripts/`, `testing/`, and project root were removed during cleanup.
+- `analyze_annotation_accuracy.py` - summarize model accuracy and annotation errors

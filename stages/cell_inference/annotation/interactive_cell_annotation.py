@@ -15,7 +15,7 @@ import os
 from pathlib import Path
 from typing import Dict, List
 
-from stages.stage2_multiclass.taxonomy.class_taxonomy import CANONICAL_CLASS_NAMES, canonicalize_label
+from stages.landcover_model.taxonomy.landcover_class_taxonomy import CANONICAL_CLASS_NAMES, canonicalize_label
 
 
 def display_cell_for_annotation(annotation: Dict, cell_number: int, total_cells: int) -> Dict:

@@ -32,13 +32,13 @@ from torch.utils.data import DataLoader, Dataset
 from torchvision import transforms
 from tqdm import tqdm
 
-from stages.stage1_single_cell.core.landcover_pipeline import (
+from stages.cell_inference.core.landcover_inference_pipeline import (
     CANONICAL_CLASS_NAMES,
     get_device,
     load_model,
     predict_single_image,
 )
-from stages.stage2_multiclass.taxonomy.class_taxonomy import CLASS_ALIASES, canonicalize_label
+from stages.landcover_model.taxonomy.landcover_class_taxonomy import CLASS_ALIASES, canonicalize_label
 
 
 class IndianSatelliteDataset(Dataset):

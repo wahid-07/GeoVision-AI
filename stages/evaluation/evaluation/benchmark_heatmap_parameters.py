@@ -20,7 +20,7 @@ from typing import Dict, List, Optional, Sequence
 
 import numpy as np
 
-from stages.stage1_single_cell.core.landcover_pipeline import (
+from stages.cell_inference.core.landcover_inference_pipeline import (
     CANONICAL_CLASS_NAMES,
     get_device,
     load_model,

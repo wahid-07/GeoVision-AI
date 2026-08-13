@@ -33,7 +33,7 @@ from typing import Dict, List
 import matplotlib.pyplot as plt
 import numpy as np
 
-from stages.stage2_multiclass.taxonomy.class_taxonomy import CANONICAL_CLASS_NAMES, canonicalize_label
+from stages.landcover_model.taxonomy.landcover_class_taxonomy import CANONICAL_CLASS_NAMES, canonicalize_label
 
 
 def discover_annotation_files(artifacts_root: Path) -> List[Path]:
